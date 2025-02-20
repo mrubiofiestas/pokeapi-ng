@@ -1,21 +1,24 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
 import { PokemonServiceService } from '../pokemon-service.service';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-pokemon-list',
-/*   imports: [PokemonDetailComponent], */
+  imports: [PokemonDetailComponent],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+/*   changeDetection: ChangeDetectionStrategy.OnPush, */
 })
 export class PokemonListComponent {
-public pokemons = [];
+  // TODO: cambiar any
+public pokemons: any[] = [];
 private pokemonService = inject(PokemonServiceService);
 
 constructor() {
   this.pokemonService.getPokemonList().subscribe((data) => {
-    console.log('data', data);
+    this.pokemons = data.results;
+    console.log('data', data.results);
   })
 }
 clickName(frase:string) {
