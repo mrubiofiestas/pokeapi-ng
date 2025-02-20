@@ -1,49 +1,40 @@
 {
-  "hash": "e1b8818e",
-  "configHash": "f0ba7fc4",
+  "hash": "5ebce38a",
+  "configHash": "2db33470",
   "lockfileHash": "ca4f582e",
-  "browserHash": "5097ba24",
+  "browserHash": "5d6b908d",
   "optimized": {
+    "@angular/common/http": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
+      "file": "@angular_common_http.js",
+      "fileHash": "a40c4aac",
+      "needsInterop": false
+    },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "130c2cfe",
+      "fileHash": "83d26267",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "87aae0b1",
+      "fileHash": "8386ca11",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "9101bc8e",
-      "needsInterop": false
-    },
-    "@angular/common/http": {
-      "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
-      "file": "@angular_common_http.js",
-      "fileHash": "53c641dd",
-      "needsInterop": false
-    },
-    "@angular/common": {
-      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
-      "file": "@angular_common.js",
-      "fileHash": "169a0b7c",
+      "fileHash": "f004febd",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-MOQWORYA": {
-      "file": "chunk-MOQWORYA.js"
+    "chunk-DHHOTKWL": {
+      "file": "chunk-DHHOTKWL.js"
     },
-    "chunk-KXEXL6MI": {
-      "file": "chunk-KXEXL6MI.js"
-    },
-    "chunk-IHBUS2L2": {
-      "file": "chunk-IHBUS2L2.js"
+    "chunk-RNPES3FH": {
+      "file": "chunk-RNPES3FH.js"
     },
     "chunk-QDVODIJV": {
       "file": "chunk-QDVODIJV.js"

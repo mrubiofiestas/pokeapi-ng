@@ -1,3 +1,4 @@
+<app-paginator (nextPage)="nextPage()" (prevPage)="prevPage()"/>
 @for (pokemon of pokemons; track $index) {
     <app-pokemon-detail 
        [pokemon]="pokemon.name"

@@ -2,10 +2,11 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
 import { PokemonServiceService } from '../pokemon-service.service';
 import { JsonPipe } from '@angular/common';
+import { PaginatorComponent } from '../paginator/paginator.component';
 
 @Component({
   selector: 'app-pokemon-list',
-  imports: [PokemonDetailComponent],
+  imports: [PokemonDetailComponent, PaginatorComponent],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.scss',
 /*   changeDetection: ChangeDetectionStrategy.OnPush, */
@@ -23,6 +24,13 @@ constructor() {
 }
 clickName(frase:string) {
   console.log(frase);
+}
+
+nextPage() {
+  console.log('siguiente pagina');
+}
+prevPage() {
+  console.log('pagina anterior');
 }
   /* {
     name: 'Pikachu', 
