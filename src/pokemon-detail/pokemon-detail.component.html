@@ -1,9 +1,0 @@
-<div class="container">
-    <img [src]="imagen" [alt]="'imagen de' + pokemon" height="200" width="200"/>
-    <h1>{{ pokemon }}</h1>
-    @for (hability of habilities; track $index) {
-        <p>{{ hability }}</p>
-    }
-    <button (click)="clickName.emit('boton cliclado')">Botón</button>
-</div>
-

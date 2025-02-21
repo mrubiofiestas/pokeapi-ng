@@ -4,12 +4,18 @@ export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'pokemon-list'
+        redirectTo: 'pokemon-list',
     },
     {
         path: 'pokemon-list',
         loadComponent: () => import('../pokemon-list/pokemon-list.component').then(
             (c) => c.PokemonListComponent,
+        ),
+    },
+    {
+        path: 'pokemon/:pokemonId',
+        loadComponent: () => import('../pokemon/pokemon.component').then(
+            (c) => c.PokemonComponent,
         ),
     },
     {
@@ -19,4 +25,5 @@ export const routes: Routes = [
             (c) => c.NotFoundComponent,
         ),
     },
+    
 ];

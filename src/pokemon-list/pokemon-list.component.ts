@@ -1,36 +1,52 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
+import { PokemonCardComponent } from '../pokemon-card/pokemon-card.component';
 import { PokemonServiceService } from '../pokemon-service.service';
 import { JsonPipe } from '@angular/common';
 import { PaginatorComponent } from '../paginator/paginator.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-list',
-  imports: [PokemonDetailComponent, PaginatorComponent],
+  imports: [PokemonCardComponent, PaginatorComponent],
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.scss',
 /*   changeDetection: ChangeDetectionStrategy.OnPush, */
 })
 export class PokemonListComponent {
-  // TODO: cambiar any
 public pokemons: any[] = [];
+pages?: any;
 private pokemonService = inject(PokemonServiceService);
+private router = inject(Router);
 
 constructor() {
   this.pokemonService.getPokemonList().subscribe((data) => {
+    this.pages = {next: data.next, previous: data.previous};
     this.pokemons = data.results;
-    console.log('data', data.results);
+    //console.log('data', data.results);
   })
 }
-clickName(frase:string) {
-  console.log(frase);
+clickName(pokemon:string) {
+  this.router.navigate(['/pokemon', pokemon]);
 }
 
 nextPage() {
-  console.log('siguiente pagina');
+  if (this.pages.next) {
+    this.pokemonService.changePage(this.pages.next).subscribe((data) => {
+      this.pages = {next: data.next, previous: data.previous};
+      this.pokemons = data.results;
+    })
+  }
+  //console.log('siguiente pagina');
 }
 prevPage() {
-  console.log('pagina anterior');
+  if(this.pages.previous) {
+    this.pokemonService.changePage(this.pages.previous).subscribe((data) => {
+      this.pages = {next: data.next, previous: data.previous};
+      this.pokemons = data.results;
+    })
+  }
+  
+  //console.log('pagina anterior');
 }
   /* {
     name: 'Pikachu', 

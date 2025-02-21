@@ -8,9 +8,16 @@ import { Observable } from 'rxjs';
 export class PokemonServiceService {
   private http = inject(HttpClient);
 
-  // TODO: cambiar any  
   getPokemonList(): Observable<any>  { 
     return this.http.get('https://pokeapi.co/api/v2/pokemon');
+  }
+
+  changePage(url: string): Observable<any>{
+    return this.http.get(url);
+  }
+
+  getPokemonDetail(pokemonId: string): Observable<any> {
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
   }
 
 }
